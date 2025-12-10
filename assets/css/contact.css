@@ -2,6 +2,9 @@
     padding-top: 20px;
     padding-bottom: 0; 
     background-color: #E2DDD5;
+    background-image: 
+        linear-gradient(rgba(226, 221, 213, 0.5), rgba(226, 221, 213, 0.5)), 
+        url('../images/background1.png');
 }
 
 .page-title {
