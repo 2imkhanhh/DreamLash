@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dream Lash - Home</title>
 
-    <link rel="stylesheet" href="../Dream Lash/assets/css/style.css">
-    <link rel="stylesheet" href="../Dream Lash/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -322,7 +322,6 @@
             const btnNext = document.getElementById('btnNext');
             let isAnimating = false;
 
-            // Hàm hiệu ứng nháy nút
             function flashButton(btn) {
                 btn.classList.add('arrow-active');
                 setTimeout(() => {
@@ -331,52 +330,43 @@
                 }, 150);
             }
 
-            // Hàm lấy % trượt dựa trên kích thước màn hình
             function getTranslateValue() {
-                // Nếu màn hình laptop (>= 992px) thì trượt 33.3333% (1 ảnh)
-                // Nếu màn hình mobile (< 992px) thì trượt 50% (1 ảnh)
                 return window.innerWidth >= 992 ? 33.3333 : 50;
             }
 
             if (row && btnPrev && btnNext) {
-
-                // --- XỬ LÝ NEXT ---
                 btnNext.addEventListener('click', function () {
                     flashButton(this);
 
                     if (isAnimating) return;
                     isAnimating = true;
 
-                    const movePercent = getTranslateValue(); // Lấy % cần trượt
+                    const movePercent = getTranslateValue(); 
 
                     row.style.transition = "transform 0.3s ease-in-out";
-                    // Trượt sang trái 1 item
                     row.style.transform = `translateX(-${movePercent}%)`;
 
                     setTimeout(() => {
-                        row.appendChild(row.firstElementChild); // Đẩy item đầu xuống cuối
+                        row.appendChild(row.firstElementChild); 
                         row.style.transition = "none";
                         row.style.transform = "translateX(0)";
                         isAnimating = false;
                     }, 300);
                 });
 
-                // --- XỬ LÝ PREV ---
                 btnPrev.addEventListener('click', function () {
                     flashButton(this);
 
                     if (isAnimating) return;
                     isAnimating = true;
 
-                    const movePercent = getTranslateValue(); // Lấy % cần trượt
+                    const movePercent = getTranslateValue(); 
 
                     row.style.transition = "none";
-                    row.prepend(row.lastElementChild); // Đẩy item cuối lên đầu
-                    // Đặt vị trí ban đầu lệch sang trái 1 item
+                    row.prepend(row.lastElementChild); 
                     row.style.transform = `translateX(-${movePercent}%)`;
 
                     setTimeout(() => {
-                        // Trượt về 0
                         row.style.transition = "transform 0.3s ease-in-out";
                         row.style.transform = "translateX(0)";
                         setTimeout(() => {
