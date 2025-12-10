@@ -1,0 +1,358 @@
+.about-page-hero {
+    background-color: #E2DDD5;
+    padding: 20px 0 80px 0;
+    min-height: 80vh;
+}
+
+.page-title {
+    font-family: 'SVN-Aptima', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #685951;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.about-hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.about-hero-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.dreamy-intro {
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.intro-text {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px !important;
+    margin-top: 10px;
+}
+
+.giant-brand-name {
+    font-family: 'SVN-Aptima', sans-serif;
+    font-size: 120px;
+    line-height: 0.9;
+    color: #BDB6B0;
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    bottom: 490px;
+    z-index: 1;
+    width: fit-content;
+    text-align: right;
+    display: block;
+    padding-left: 0;
+    margin-left: -12px;
+}
+
+.intro-img-wrapper {
+    margin: 0;
+    margin-right: auto;
+    margin-left: 0;
+    max-width: 100%;
+}
+
+.intro-img-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.process-img-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.process-img-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.quote-card {
+    position: absolute;
+    bottom: -20px;
+    left: -60px;
+    background-color: #EBE6DF;
+    padding: 20px 20px;
+    width: 300px;
+    font-family: 'SVN-Aptima', sans-serif;
+    font-style: italic;
+    color: #685951;
+    font-size: 20px;
+    line-height: 1.4;
+    transform: rotate(5deg);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.decor-vector-bg {
+    position: absolute;
+    top: 80%;
+    transform: translateY(-50%);
+    left: -50px;
+    width: 150%;
+    height: auto;
+    z-index: 0;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.decorations-about {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star-1 {
+    left: 105px;
+    bottom: 310px;
+    width: 35px;
+}
+
+.star-2 {
+    right: 85%;
+    bottom: 380px;
+    width: 30px;
+}
+
+.about-founder-section {
+    padding: 50px 0;
+    background-color: #E2DDD5;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    font-family: 'SVN-Aptima', serif;
+    font-weight: 400;
+    color: #685951;
+    font-size: 48px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-desc {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 400;
+    color: #685951;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.founder-img-wrapper {
+    overflow: hidden;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: 60px
+}
+
+.founder-img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.founder-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.founder-curve {
+    position: absolute;
+    bottom: 0;
+    left: 90px;
+    width: 1000px;
+    height: auto;
+}
+
+.cta-section {
+    position: relative;
+    /* background-image: url('../Dream Lash/assets/images/image1.png');  */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 120px 0;
+    color: #fff;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #43312799;
+    z-index: 1;
+}
+
+.cta-title {
+    font-family: 'SVN-Aptima', serif;
+    font-size: 42px;
+    line-height: 1.3;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #EFE8E1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-location {
+    display: inline-block;
+    background-color: #EFE8E1;
+    color: #685951;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 991.98px) {
+    .about-page-hero {
+        min-height: auto !important;
+        padding-bottom: 40px !important;
+    }
+    .about-hero-image-wrapper {
+        border-radius: 20px;
+    }
+    .giant-brand-name {
+        position: static !important;
+        font-size: 38px !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 30px 0 !important;
+        padding: 0 !important;
+    }
+    .intro-text {
+        text-align: center !important;
+        padding-right: 0 !important;
+        margin-bottom: 20px !important;
+    }
+    .intro-img-wrapper,
+    .process-img-wrapper {
+        margin: 20px auto !important;
+        max-width: 100% !important;
+    }
+    .decor-vector-bg {
+        display: none !important;
+    }
+    .quote-card {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        max-width: 300px;
+        margin: -20px auto 30px auto !important;
+        text-align: center !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-founder-section {
+        padding: 50px 0 !important;
+    }
+
+    .founder-img-wrapper {
+        margin: 30px auto 0 auto !important;
+        margin-right: auto !important;
+        max-width: 100%;
+    }
+
+    .cta-section {
+        padding: 60px 0 !important;
+        background-attachment: scroll !important;
+    }
+
+    .cta-title {
+        font-size: 26px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .section-title,
+    .page-title {
+        font-size: 32px !important;
+        text-align: center !important;
+    }
+
+    .section-desc {
+        text-align: center !important;
+    }
+
+    .star-2 {
+        display: none !important;
+    }
+
+    .founder-decor {
+        display: none !important;
+    }
+
+    .footer-heading {
+        font-size: 16px !important; 
+        margin-bottom: 20px !important;
+    }
+    
+    .footer-links li a, 
+    .footer-hours li span {
+        font-size: 13px !important; 
+    }
+    
+    .col-6 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .giant-brand-name {
+        font-size: 30px !important;
+    }
+
+    .quote-card {
+        font-size: 16px !important;
+    }
+}
