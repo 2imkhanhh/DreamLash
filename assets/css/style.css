@@ -925,7 +925,6 @@ img {
     .slider-arrow:active {
         background-color: #685951 !important;
         color: #fff !important;
-        border-color: #685951 !important;
         transform: scale(0.9);
     }
 
@@ -1060,8 +1059,8 @@ img {
     }
 
     .custom-footer .col-lg-5 {
-        text-align: center; /* Căn giữa logo */
-        margin-bottom: 40px !important; /* Tạo khoảng cách giữa logo và phần Information */
+        text-align: center; 
+        margin-bottom: 40px !important; 
     }
 
     .footer-logo {
@@ -1074,11 +1073,36 @@ img {
         height: auto;
     }
     
-    /* Căn giữa tiêu đề cột nếu muốn đẹp hơn (tùy chọn) */
     .footer-heading {
         margin-top: 0;
         margin-bottom: 20px;
-        /* text-align: center; Bỏ comment dòng này nếu muốn chữ Information cũng ra giữa */
+    }
+}
+
+@media (max-width: 1199px) {
+    .slider-row {
+        display: flex;
+        flex-wrap: nowrap !important;
+        width: 100%;
+        margin: 0 !important;
+        transform: translateX(0);
+        transition: transform 0.3s ease-in-out;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        perspective: 1000;
+        will-change: transform;
+    }
+
+    .service-col {
+        flex: 0 0 50%; 
+        max-width: 50%;
+        width: 50%;
+        padding: 0 5px;
+        margin-bottom: 0 !important;
+        box-sizing: border-box;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
