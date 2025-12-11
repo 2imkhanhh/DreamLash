@@ -18,11 +18,13 @@ img {
 }
 
 .custom-header {
+    position: fixed;
     background-color: #E2DDD5;
     border-bottom: 1px solid #685951;
     padding: 0;
-    position: relative;
+    /* position: relative; */
     z-index: 100;
+    width: 100%;
 }
 
 .custom-header .navbar {
@@ -112,7 +114,7 @@ img {
 }
 
 .hero-section {
-    padding: 20px 0 0 0;
+    padding: 120px 0 0 0;
     position: relative;
     overflow: hidden;
     background-color: #E2DDD5;

@@ -138,6 +138,10 @@
     border-bottom: 1px solid #685951; 
 }
 
+.service-list-item:last-child:hover { 
+    border-bottom: none; 
+}
+
 .service-number {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
@@ -191,7 +195,7 @@
 }
 
 .special-item {
-    padding: 10px 0;
+    padding: 20px 0;
     border-bottom: 1px solid #BDB6B0; 
 }
 
