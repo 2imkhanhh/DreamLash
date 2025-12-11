@@ -495,3 +495,31 @@
         width: 100%;
     }
 }
+
+@media (hover: hover) {
+    .slider-arrow:hover {
+        background-color: #fff !important;
+        color: #685951 !important;
+        border-color: #685951 !important;
+    }
+}
+
+/* --- 3. Hiệu ứng Active (Flash nâu) - Quan trọng nhất --- */
+/* Dùng selector cụ thể hơn (button.slider-arrow) để đảm bảo độ ưu tiên cao nhất */
+button.slider-arrow.arrow-active,
+button.slider-arrow:active {
+    background-color: #685951 !important; /* Màu Nâu */
+    color: #fff !important;             /* Chữ Trắng */
+    border-color: #685951 !important;
+    transform: scale(0.9);
+    
+    /* Đảm bảo đè tất cả các trạng thái khác */
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Loại bỏ viền xanh/đen khi nút được focus (do bấm xong trình duyệt tự focus) */
+.slider-arrow:focus {
+    outline: none !important;
+    /* Không set background-color ở đây để tránh đè mất màu nâu */
+}
