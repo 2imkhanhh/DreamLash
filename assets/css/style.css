@@ -648,8 +648,7 @@ img {
         padding: 0;
     }
 
-    .navbar-collapse, 
-    .collapsing {
+    .navbar-collapse {
         position: fixed;
         top: 0;
         left: 0;
@@ -664,16 +663,38 @@ img {
         justify-content: flex-start !important; 
         align-items: flex-start;     
         padding-top: 80px;  
-        padding-left: 20px; 
+        padding-left: 20px;
         transform: translateY(-100%);
-        visibility: hidden;
         opacity: 0;
-        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
+        visibility: hidden;
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s !important;
     }
-    .navbar-collapse.show { 
+
+    .navbar-collapse.show {
         transform: translateY(0);
+        opacity: 1;
         visibility: visible;
-        opacity: 1; 
+    }
+
+    .collapsing {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh !important;
+        z-index: 9999;
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(4px);
+        display: flex !important;
+        flex-direction: column;
+        justify-content: flex-start !important; 
+        align-items: flex-start;     
+        padding-top: 80px;  
+        padding-left: 20px; 
+        transform: translateY(0); 
+        opacity: 1;
+        visibility: visible;
+        transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out !important;
     }
     .btn-close-menu {
         position: absolute;
