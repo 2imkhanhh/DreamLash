@@ -223,7 +223,7 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 120px 0;
+    padding: 80px 0;
     color: #fff;
 }
 
@@ -323,13 +323,23 @@
     }
 
     .cta-section {
-        padding: 60px 0 !important;
+        padding: 20px !important;
         background-attachment: scroll !important;
+        background-size: 1456 auto !important; 
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
     }
 
     .cta-title {
-        font-size: 26px !important;
-        margin-bottom: 30px !important;
+        font-size: 18px !important; 
+        line-height: 1.4 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .btn-location {
+        font-size: 12px !important;   
+        padding: 6px 20px !important;
+        letter-spacing: 0.5px !important;
     }
 
     .section-title,

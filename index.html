@@ -28,8 +28,11 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav nav-custom align-items-center">
+                <div class="collapse navbar-collapse justify-content-lg-center" id="navbarNav">
+                    <button type="button" class="btn-close-menu d-lg-none" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav">
+                        &times; </button>
+                    <ul class="navbar-nav nav-custom">
                         <li class="nav-item">
                             <a class="nav-link active" href="index.html">Home</a>
                         </li>
@@ -125,15 +128,13 @@
                     <div class="row slider-row" id="serviceContainer">
                         <div class="col-md-4 text-center mb-4 mb-md-0 service-col">
                             <div class="service-item">
-                                <img src="assets/images/services1.png" alt="Classic Full Set"
-                                    class="service-img">
+                                <img src="assets/images/services1.png" alt="Classic Full Set" class="service-img">
                                 <h3 class="service-name">Classic Full Set</h3>
                             </div>
                         </div>
                         <div class="col-md-4 text-center mb-4 mb-md-0 service-col">
                             <div class="service-item">
-                                <img src="assets/images/services2.png" alt="Hybrid Full Set"
-                                    class="service-img">
+                                <img src="assets/images/services2.png" alt="Hybrid Full Set" class="service-img">
                                 <h3 class="service-name">Hybrid Full Set</h3>
                             </div>
                         </div>
@@ -193,8 +194,7 @@
 
                 <div class="col-lg-6 text-center position-relative ps-lg-5">
                     <div class="appointment-image-wrapper">
-                        <img src="assets/images/appointment.png" alt="Lash Appointment"
-                            class="appointment-img">
+                        <img src="assets/images/appointment.png" alt="Lash Appointment" class="appointment-img">
                     </div>
                 </div>
 
@@ -247,7 +247,8 @@
                         <img src="assets/images/logo2.png" alt="Dreamy Logo" class="mb-2">
                     </a>
                 </div>
-                <div class="col-lg-3 col-md-6 col-6 mb-4 mb-lg-0">
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
                     <h4 class="footer-heading">Information</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
@@ -256,7 +257,8 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-6 col-6">
+
+                <div class="col-lg-4 col-md-6 col-12">
                     <h4 class="footer-heading">Opening hours</h4>
                     <ul class="footer-hours">
                         <li class="d-flex justify-content-between">
@@ -291,20 +293,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-                        <p class="mb-0">Copyright © Dreamy. All rights reserved</p>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <a href="#" class="footer-bottom-link me-4">Privacy Policy</a>
-                        <a href="#" class="footer-bottom-link">Terms and Conditions</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -335,13 +323,13 @@
                     if (isAnimating) return;
                     isAnimating = true;
 
-                    const movePercent = getTranslateValue(); 
+                    const movePercent = getTranslateValue();
 
                     row.style.transition = "transform 0.3s ease-in-out";
                     row.style.transform = `translateX(-${movePercent}%)`;
 
                     setTimeout(() => {
-                        row.appendChild(row.firstElementChild); 
+                        row.appendChild(row.firstElementChild);
                         row.style.transition = "none";
                         row.style.transform = "translateX(0)";
                         isAnimating = false;
@@ -354,10 +342,10 @@
                     if (isAnimating) return;
                     isAnimating = true;
 
-                    const movePercent = getTranslateValue(); 
+                    const movePercent = getTranslateValue();
 
                     row.style.transition = "none";
-                    row.prepend(row.lastElementChild); 
+                    row.prepend(row.lastElementChild);
                     row.style.transform = `translateX(-${movePercent}%)`;
 
                     setTimeout(() => {

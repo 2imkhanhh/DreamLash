@@ -648,24 +648,70 @@ img {
         padding: 0;
     }
 
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 9999;
+        background-color: rgba(255, 255, 255, 0.8); 
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        align-items: flex-start;     
+        padding-top: 80px;  
+        padding-left: 20px; 
+        transition: all 0.5s ease-in-out;
+    }
+    /* .navbar-collapse.show { display: flex; } */
+    .btn-close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 40px;
+        color: #000;
+        line-height: 1;
+        padding: 0;
+    }
+
     .nav-custom {
-        gap: 5px;
-        justify-content: center;
-        margin-bottom: 0;
+        width: 100%;
+        gap: 0; 
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .nav-custom .nav-item {
+        width: 100%;
+        text-align: left;
     }
 
     .nav-custom .nav-link,
     .nav-custom a {
-        font-size: 16px;
+        font-size: 18px;          
         display: block;
-        padding: 5px !important; 
-        line-height: 1.4; 
+        padding: 10px 0 !important; 
+        line-height: 1.4;
+        color: inherit;           
+        font-weight: normal;
     }
 
     .nav-custom .nav-link.active,
     .nav-custom .nav-link:hover {
         font-weight: 700;
         opacity: 0.8;
+        background: transparent; 
+    }
+    
+    .navbar-toggler:focus {
+        outline: none !important;
+        box-shadow: none !important;
     }
 
     .hero-title {
@@ -688,26 +734,8 @@ img {
         margin-top: 30px;
     }
 
-    .navbar-collapse {
-        background-color: #E2DDD5;
-        padding-bottom: 0;
-        margin-top: 0;
-        border-top: 1px solid rgba(104, 89, 81, 0.2);
-    }
-
-    .nav-custom .nav-item {
-        margin-top: 0;
-        text-align: center;
-    }
-
-    .navbar-toggler:focus,
-    .navbar-toggler:active {
-        outline: none !important;
-        box-shadow: none !important;
-    }
-
     .hero-section {
-        padding: 20px 0;
+        padding: 120px 0 20px 0;
         text-align: center;
     }
 
@@ -750,8 +778,8 @@ img {
 
     .about-image-wrapper {
         margin: 0 auto;
-        padding-left: 0 !important;
-        max-width: 100%;
+        padding-left: 20px !important;
+        max-width: 110%;
     }
 
     .about-decor-line,
@@ -811,7 +839,7 @@ img {
     }
 
     .about-img {
-        width: 100%;
+        width: 110%;
         height: 200px;
         object-fit: cover;
         border-radius: 10px;
@@ -1000,6 +1028,28 @@ img {
 
     .contact-form {
         padding: 0 10px;
+    }
+
+    .custom-footer .col-lg-5 {
+        text-align: center; /* Căn giữa logo */
+        margin-bottom: 40px !important; /* Tạo khoảng cách giữa logo và phần Information */
+    }
+
+    .footer-logo {
+        display: inline-block;
+    }
+
+    .footer-logo img {
+        max-width: 100px; 
+        width: 100%;     
+        height: auto;
+    }
+    
+    /* Căn giữa tiêu đề cột nếu muốn đẹp hơn (tùy chọn) */
+    .footer-heading {
+        margin-top: 0;
+        margin-bottom: 20px;
+        /* text-align: center; Bỏ comment dòng này nếu muốn chữ Information cũng ra giữa */
     }
 }
 
