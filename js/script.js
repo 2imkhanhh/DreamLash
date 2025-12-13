@@ -20,4 +20,16 @@ document.addEventListener("DOMContentLoaded", function () {
         el.classList.add('reveal-item'); 
         observer.observe(el);
     });
+
+    document.querySelectorAll(".services-dropdown").forEach(dropdown => {
+        const toggle = dropdown.querySelector(".service-toggle");
+
+        if (!toggle) return;
+
+        toggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation(); 
+            dropdown.classList.toggle("open");
+        });
+    });
 });
