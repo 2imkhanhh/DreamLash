@@ -643,6 +643,91 @@ img {
     transition-delay: 0.3s;
 }
 
+.services-dropdown {
+    position: relative;
+}
+
+.service-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.service-link i.bx-chevron-down {
+    transition: transform 0.35s ease;
+    transform-origin: center;
+}
+
+.services-dropdown:hover .service-link i.bx-chevron-down {
+    transform: rotate(180deg);
+}
+
+.services-mega {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 750px; 
+    background: #f7f4ef;
+    padding: 35px 50px;
+    display: none;
+    gap: 70px;
+    z-index: 999;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.services-dropdown:hover .services-mega {
+    display: flex;
+}
+
+.services-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 25px;
+}
+
+.services-col a {
+    color: #6b5c4d;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    white-space: nowrap; 
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.services-col a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: #6b5c4d;
+    transition: width 0.9s ease;
+}
+
+/* Hover chạy từ trái qua phải */
+.services-col a:hover::after {
+    width: 100%;
+}
+
+.services-col a:hover {
+    color: #000;
+}
+
+.services-mega .services-col a {
+    display: inline-block; /* QUAN TRỌNG */
+    width: fit-content;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 18px;      /* tăng size */
+    font-weight: 500;     /* giống footer-heading */
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    text-transform: none !important;
+}
+
 @media (max-width: 991px) {
     .custom-header {
         padding: 0;
@@ -1076,6 +1161,25 @@ img {
     .footer-heading {
         margin-top: 0;
         margin-bottom: 20px;
+    }
+
+    .navbar-nav .dropdown:hover .dropdown-menu {
+        display: block; 
+        margin-top: 0;  
+    }
+
+    .navbar-nav .dropdown .dropdown-menu {
+        display: none; 
+        min-width: 650px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .navbar-nav .dropdown.mega-dropdown .row {
+        display: flex;
+    }
+    .navbar-nav .dropdown.mega-dropdown .col-lg-6:first-child {
+        border-right: 1px solid #eee;
     }
 }
 
