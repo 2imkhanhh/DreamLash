@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const revealElements = document.querySelectorAll('.reveal-item, .section-title, .section-desc, .service-item, .hero-img, .about-img, .contact-form');
 
     const observerOptions = {
-        root: null, 
+        root: null,
         rootMargin: '0px',
-        threshold: 0.2 
+        threshold: 0.2
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, observerOptions);
 
     revealElements.forEach(el => {
-        el.classList.add('reveal-item'); 
+        el.classList.add('reveal-item');
         observer.observe(el);
     });
 
@@ -28,8 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         toggle.addEventListener("click", function (e) {
             e.preventDefault();
-            e.stopPropagation(); 
+            e.stopPropagation();
             dropdown.classList.toggle("open");
         });
+    });
+    const navbar = document.querySelector('.navbar-collapse');
+    const toggler = document.querySelector('.navbar-toggler');
+
+    toggler.addEventListener('click', () => {
+        document.body.classList.toggle('menu-open');
     });
 });
