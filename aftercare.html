@@ -343,19 +343,4 @@
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
-<script>
-    document.querySelectorAll('.accordion-button').forEach(btn => {
-        btn.addEventListener('click', e => {
-            // Ngăn browser tự scroll
-            e.preventDefault();
-
-            // Bỏ focus để không bị kéo lên header
-            btn.blur();
-
-            // Cho Bootstrap xử lý collapse
-            btn.click = null;
-        });
-    });
-</script>
-
 </html>

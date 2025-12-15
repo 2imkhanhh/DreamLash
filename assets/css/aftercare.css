@@ -1,6 +1,9 @@
-/* --- 1. CẤU TRÚC GỐC & FIX CUỘN --- */
+/* --- 1. FIX LỖI NHẢY TRANG (QUAN TRỌNG NHẤT) --- */
 html, body {
-    overflow-anchor: none; /* Chống nhảy trang */
+    /* Ngăn trình duyệt tự động thay đổi vị trí cuộn */
+    overflow-anchor: none; 
+    /* Tắt scroll behavior smooth trên mobile để tránh xung đột khi mở accordion */
+    scroll-behavior: auto; 
 }
 
 .aftercare-section {
@@ -8,7 +11,9 @@ html, body {
     padding-bottom: 100px;
     background-color: #E2DDD5; 
     min-height: 100vh;   
-    display: block; /* Dùng block để ổn định layout */
+    
+    /* BẮT BUỘC DÙNG BLOCK, KHÔNG DÙNG FLEX */
+    display: block; 
 }
 
 /* --- 2. THANH TIÊU ĐỀ --- */
@@ -34,7 +39,7 @@ html, body {
     letter-spacing: 2px;
 }
 
-/* --- 3. ACCORDION CONTAINER --- */
+/* --- 3. ACCORDION ITEM (FIX RUNG LẮC) --- */
 .custom-accordion {
     width: 100%;
 }
@@ -46,13 +51,14 @@ html, body {
     background-color: transparent;
     overflow: hidden; 
     position: relative;
-    /* Fix rung lắc cho iPhone */
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform: translate3d(0,0,0);
+
+    /* --- FIX NHẢY TRANG: CÔ LẬP LAYOUT --- */
+    /* Lệnh này bảo trình duyệt: "Mày chỉ cần tính toán lại kích thước của MỘT mục này thôi, 
+       đừng tính toán lại cả trang web". Giúp trang web đứng im, không bị nhảy. */
+    contain: content; 
 }
 
-/* --- 4. NÚT BẤM (CỐT LÕI CỦA VIỆC FIX NHÁY) --- */
+/* --- 4. NÚT BẤM --- */
 .custom-accordion .accordion-button {
     font-family: 'Urbanist', sans-serif;
     font-size: 20px;
@@ -61,63 +67,32 @@ html, body {
     border-radius: 0;
     border: 0;
     
-    /* Tắt mọi hiệu ứng mặc định gây nhiễu */
+    /* Màu mặc định */
+    background-color: #f5f5f5;
+    color: #333;
+
     box-shadow: none !important; 
     outline: none !important;
     
-    /* Tắt màu highlight xám mặc định của trình duyệt Mobile */
+    /* Fix cảm ứng */
     -webkit-tap-highlight-color: transparent; 
     touch-action: manipulation;
-
-    /* Tách layer GPU để mượt hơn */
-    transform: translateZ(0); 
     
-    /* Transition mặc định cho cả PC và Mobile (Khi mở) */
+    /* Mặc định trên PC thì để transition */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* --- TRẠNG THÁI MỞ (ACTIVE) --- */
+/* TRẠNG THÁI MỞ (ACTIVE) */
 .custom-accordion .accordion-button:not(.collapsed) {
     background-color: #d0b76d; 
     color: #ffffff;
 }
 
-/* --- TRẠNG THÁI ĐÓNG (COLLAPSED) --- */
-.custom-accordion .accordion-button.collapsed {
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-/* --- 5. XỬ LÝ HOVER: TÁCH BIỆT PC VÀ MOBILE (QUAN TRỌNG NHẤT) --- */
-
-/* @media (hover: hover) nghĩa là: "Chỉ áp dụng đoạn này cho thiết bị CÓ CHUỘT (PC)" */
-@media (hover: hover) {
-    /* Trên PC: Hover vào thì đổi màu nhẹ, bỏ ra thì hết -> Rất mượt */
-    .custom-accordion .accordion-button.collapsed:hover {
-        background-color: #eaeaea; 
-        color: #000;
-    }
-}
-
-/* @media (hover: none) nghĩa là: "Chỉ áp dụng cho thiết bị CẢM ỨNG (Điện thoại)" */
-@media (hover: none) {
-    /* Trên Mobile: CẤM HOVER. 
-       Dòng này ngăn chặn việc ngón tay chạm vào bị tính là hover, 
-       nguyên nhân chính gây ra việc màu bị kẹt (nháy) */
-    .custom-accordion .accordion-button.collapsed:hover,
-    .custom-accordion .accordion-button.collapsed:focus,
-    .custom-accordion .accordion-button.collapsed:active {
-        background-color: #f5f5f5 !important;
-        color: #333 !important;
-    }
-}
-
-/* --- 6. ICON MŨI TÊN --- */
+/* --- 5. ICON MŨI TÊN --- */
 .custom-accordion .accordion-button::after {
     background-size: 1.25rem;
-    transform: translateZ(0);
-    /* Đồng bộ tốc độ xoay */
-    transition: transform 0.3s ease, filter 0.3s ease; 
+    /* Giữ transition cho icon */
+    transition: transform 0.35s ease; 
 }
 
 .custom-accordion .accordion-button.collapsed::after {
@@ -126,12 +101,11 @@ html, body {
 
 .custom-accordion .accordion-button:not(.collapsed)::after {
     filter: brightness(0) invert(1);
-    transform: rotate(-180deg) translateZ(0);
+    transform: rotate(-180deg);
 }
 
-/* --- 7. HIỆU ỨNG TRƯỢT NỘI DUNG --- */
+/* --- 6. HIỆU ỨNG TRƯỢT NỘI DUNG --- */
 .custom-accordion .accordion-collapse.collapsing {
-    /* Tốc độ 0.35s là chuẩn mượt giống PC */
     transition: height 0.35s ease-in-out;
     will-change: height;
 }
@@ -140,7 +114,7 @@ html, body {
     visibility: visible;
 }
 
-/* --- 8. NỘI DUNG (BODY) --- */
+/* --- 7. NỘI DUNG (BODY) --- */
 .custom-accordion .accordion-body {
     background-color: #ffffff;
     padding: 30px 30px 30px 50px; 
@@ -151,7 +125,6 @@ html, body {
     border-top: 1px solid #eee; 
 }
 
-/* Fix margin thẻ p */
 .custom-accordion .accordion-body p {
     margin-bottom: 0; 
 }
@@ -159,22 +132,40 @@ html, body {
     margin-top: 1rem;
 }
 
-/* --- 9. RESPONSIVE --- */
-@media (max-width: 768px) {
-    .aftercare-title-bar-full h1 {
-        font-size: 24px;
-    }
-    .aftercare-section {
-        padding-top: 80px;
-    }
+/* =========================================
+   PHÂN BIỆT PC VÀ MOBILE (FIX CUỐI CÙNG)
+   ========================================= */
 
+@media (hover: hover) {
+    /* PC: Hover bình thường */
+    .custom-accordion .accordion-button.collapsed:hover {
+        background-color: #eaeaea; 
+        color: #000;
+    }
+}
+
+@media (hover: none) {
+    /* MOBILE: FIX NHÁY MÀU */
+    /* 1. Tắt hoàn toàn transition màu -> Đổi màu tức thì -> Không nháy */
     .custom-accordion .accordion-button {
-        padding: 15px 20px; 
-        font-size: 18px;
+        transition: none !important;
+    }
+    
+    /* 2. Active Touch: Đổi màu ngay khi chạm */
+    .custom-accordion .accordion-button:active {
+        background-color: #d0b76d !important;
+        color: #ffffff !important;
     }
 
-    .custom-accordion .accordion-body {
-        padding: 20px; 
-        font-size: 16px; 
+    /* 3. Tắt hover dính */
+    .custom-accordion .accordion-button.collapsed:hover,
+    .custom-accordion .accordion-button.collapsed:focus {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
     }
+    
+    /* Responsive Padding */
+    .aftercare-section { padding-top: 80px; }
+    .custom-accordion .accordion-button { padding: 15px 20px; font-size: 18px; }
+    .custom-accordion .accordion-body { padding: 20px; font-size: 16px; }
 }
