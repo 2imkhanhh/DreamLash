@@ -1,13 +1,17 @@
+/* --- 1. CẤU TRÚC GỐC & FIX CUỘN --- */
+html, body {
+    overflow-anchor: none; /* Chống nhảy trang */
+}
+
 .aftercare-section {
     padding-top: 80px;  
     padding-bottom: 100px;
     background-color: #E2DDD5; 
     min-height: 100vh;   
-    display: flex;      
-    flex-direction: column;
-    overflow-anchor: none;
+    display: block; /* Dùng block để ổn định layout */
 }
 
+/* --- 2. THANH TIÊU ĐỀ --- */
 .aftercare-title-bar-full {
     width: 100%;             
     background-color: #685951; 
@@ -30,6 +34,10 @@
     letter-spacing: 2px;
 }
 
+/* --- 3. ACCORDION CONTAINER --- */
+.custom-accordion {
+    width: 100%;
+}
 
 .custom-accordion .accordion-item {
     border: none;
@@ -37,32 +45,79 @@
     margin-bottom: 1px;
     background-color: transparent;
     overflow: hidden; 
+    position: relative;
+    /* Fix rung lắc cho iPhone */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0,0,0);
 }
 
+/* --- 4. NÚT BẤM (CỐT LÕI CỦA VIỆC FIX NHÁY) --- */
 .custom-accordion .accordion-button {
     font-family: 'Urbanist', sans-serif;
     font-size: 20px;
     font-weight: 500;
     padding: 20px 30px;
     border-radius: 0;
-    border: none;
-    box-shadow: none;
-    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    border: 0;
+    
+    /* Tắt mọi hiệu ứng mặc định gây nhiễu */
+    box-shadow: none !important; 
+    outline: none !important;
+    
+    /* Tắt màu highlight xám mặc định của trình duyệt Mobile */
+    -webkit-tap-highlight-color: transparent; 
+    touch-action: manipulation;
+
+    /* Tách layer GPU để mượt hơn */
+    transform: translateZ(0); 
+    
+    /* Transition mặc định cho cả PC và Mobile (Khi mở) */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.custom-accordion .accordion-button.collapsed {
-    background-color: #f5f5f5;
-    color: #333;
-}
-
+/* --- TRẠNG THÁI MỞ (ACTIVE) --- */
 .custom-accordion .accordion-button:not(.collapsed) {
     background-color: #d0b76d; 
     color: #ffffff;
 }
 
+/* --- TRẠNG THÁI ĐÓNG (COLLAPSED) --- */
+.custom-accordion .accordion-button.collapsed {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* --- 5. XỬ LÝ HOVER: TÁCH BIỆT PC VÀ MOBILE (QUAN TRỌNG NHẤT) --- */
+
+/* @media (hover: hover) nghĩa là: "Chỉ áp dụng đoạn này cho thiết bị CÓ CHUỘT (PC)" */
+@media (hover: hover) {
+    /* Trên PC: Hover vào thì đổi màu nhẹ, bỏ ra thì hết -> Rất mượt */
+    .custom-accordion .accordion-button.collapsed:hover {
+        background-color: #eaeaea; 
+        color: #000;
+    }
+}
+
+/* @media (hover: none) nghĩa là: "Chỉ áp dụng cho thiết bị CẢM ỨNG (Điện thoại)" */
+@media (hover: none) {
+    /* Trên Mobile: CẤM HOVER. 
+       Dòng này ngăn chặn việc ngón tay chạm vào bị tính là hover, 
+       nguyên nhân chính gây ra việc màu bị kẹt (nháy) */
+    .custom-accordion .accordion-button.collapsed:hover,
+    .custom-accordion .accordion-button.collapsed:focus,
+    .custom-accordion .accordion-button.collapsed:active {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+    }
+}
+
+/* --- 6. ICON MŨI TÊN --- */
 .custom-accordion .accordion-button::after {
     background-size: 1.25rem;
-    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), filter 0.4s ease; 
+    transform: translateZ(0);
+    /* Đồng bộ tốc độ xoay */
+    transition: transform 0.3s ease, filter 0.3s ease; 
 }
 
 .custom-accordion .accordion-button.collapsed::after {
@@ -71,29 +126,40 @@
 
 .custom-accordion .accordion-button:not(.collapsed)::after {
     filter: brightness(0) invert(1);
-    transform: rotate(-180deg);
+    transform: rotate(-180deg) translateZ(0);
 }
 
+/* --- 7. HIỆU ỨNG TRƯỢT NỘI DUNG --- */
 .custom-accordion .accordion-collapse.collapsing {
-    transition-duration: 0.5s; 
-    transition-timing-function: ease-in-out;
+    /* Tốc độ 0.35s là chuẩn mượt giống PC */
+    transition: height 0.35s ease-in-out;
+    will-change: height;
 }
 
-.custom-accordion .accordion-collapse {
-    transition: height 0.5s ease-in-out;
+.custom-accordion .accordion-collapse.collapse.show {
+    visibility: visible;
 }
 
+/* --- 8. NỘI DUNG (BODY) --- */
 .custom-accordion .accordion-body {
     background-color: #ffffff;
-    padding-left: 50px !important;
-    padding: 30px;
+    padding: 30px 30px 30px 50px; 
     font-family: 'Urbanist', sans-serif;
     font-size: 18px;
     line-height: 1.6;
     color: #685951;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #eee; 
 }
 
+/* Fix margin thẻ p */
+.custom-accordion .accordion-body p {
+    margin-bottom: 0; 
+}
+.custom-accordion .accordion-body p + p {
+    margin-top: 1rem;
+}
+
+/* --- 9. RESPONSIVE --- */
 @media (max-width: 768px) {
     .aftercare-title-bar-full h1 {
         font-size: 24px;
