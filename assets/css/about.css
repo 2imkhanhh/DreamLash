@@ -157,11 +157,11 @@
 }
 
 .about-founder-section {
-    padding: 50px 0;
-    background-color: #E2DDD5;
-    background-image:
-        linear-gradient(rgba(226, 221, 213, 0.5), rgba(226, 221, 213, 0.5)),
-        url('../images/background1.png');
+    padding: 100px 0; 
+    background-color: #EFE8E1; 
+    background-image: url('../images/background1.png'); 
+    background-size: cover;
+    background-position: center;
     position: relative;
     overflow: hidden;
 }
@@ -173,30 +173,19 @@
     font-size: 48px;
     margin-bottom: 30px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px; 
 }
 
 .section-desc {
     font-family: 'Urbanist', sans-serif;
-    font-weight: 400;
+    font-weight: 300; 
     color: #685951;
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 20px;
+    line-height: 1.8;
     margin-bottom: 0;
-}
-
-.founder-img-wrapper {
-    overflow: hidden;
-    max-width: 400px;
+    max-width: 800px; 
     margin-left: auto;
-    margin-right: 60px
-}
-
-.founder-img-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
+    margin-right: auto;
 }
 
 .founder-decor {
@@ -211,10 +200,11 @@
 
 .founder-curve {
     position: absolute;
-    bottom: 0;
-    left: 90px;
-    width: 1000px;
+    bottom: -10px; 
+    left: 50px;   
+    width: 800px; 
     height: auto;
+    opacity: 0.8;
 }
 
 .cta-section {
