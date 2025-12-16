@@ -1,36 +1,44 @@
 .service-detail-section {
     padding: 80px 0;
     background-color: #E2DDD5; 
+    background-image:
+        linear-gradient(rgba(226, 221, 213, 0.5), rgba(226, 221, 213, 0.5)),
+        url('../images/background1.png');
 }
 
 .service-img-stack {
+    margin-top: 50px !important;
+    padding-right: 80px;
     position: relative;
-    padding-right: 40px; 
-    padding-bottom: 40px;
-    max-width: 550px; 
+    max-width: 600px; 
     margin: 0 auto;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+.service-img-stack .img-frame {
+    position: absolute;
+    top: 40px;
+    left: -25px;
+    width: 100%; 
+    height: 100%;
+    z-index: 1;
+    object-fit: contain; 
+    transform: translateX(-20px); 
 }
 
 .service-img-stack .img-back {
-    margin-top: 50px;
-    width: 90%; 
-    border-radius: 15px; 
+    position: relative; 
+    width: 85%; 
+    margin: 0;
     object-fit: cover;
     display: block;
-}
-
-.service-img-stack .img-front {
-    position: absolute;
-    width: 45%; 
-    bottom: 0;
-    right: 0;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-    object-fit: cover;
-    z-index: 2;
+    z-index: 2; 
 }
 
 .service-title {
+    margin-top: 40px;
     font-family: 'SVN-Aptima', sans-serif;
     font-weight: 700;
     font-size: 50px;
@@ -50,7 +58,7 @@
     min-height: 120px;
 }
 
-.service-desc::after {
+/* .service-desc::after {
     content: '';
     display: inline-block;
     width: 2px;         
@@ -60,19 +68,37 @@
     vertical-align: middle; 
     margin-bottom: 2px; 
     animation: blink-cursor 0.75s step-end infinite;
-}
+} */
 
-@keyframes blink-cursor {
+/* @keyframes blink-cursor {
     from, to { opacity: 0; }
     50% { opacity: 1; }
-}
+} */
 
 .service-desc.typing-done::after {
     display: none;
 }
 
 .service-meta-info .meta-item {
-    gap: 15px;
+    gap: 0;
+}
+
+.meta-detail-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 220px; 
+    margin-bottom: 5px;
+    
+    font-family: 'Urbanist', sans-serif;
+    font-size: 16px; 
+    color: #858585;  
+}
+
+.meta-detail-row .detail-name {
+    font-weight: 500; 
+    color: #504e4e;   
+    min-width: 70px;  
 }
 
 .service-meta-info .meta-icon {
@@ -80,6 +106,8 @@
     text-align: center;
     color: #685951; 
     font-size: 20px;
+    transform: translateY(1px); 
+    line-height: 1;
 }
 
 .service-meta-info .meta-text {
@@ -91,7 +119,7 @@
     font-family: 'Urbanist', sans-serif;
     font-weight: 700;
     color: #504e4e;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.2;
 }
 
@@ -123,15 +151,14 @@
 
 .why-choose-section {
     padding: 80px 0;
-    /* Màu nền lấy từ ảnh swatch bạn gửi */
     background-color: #fff; 
 }
 
 .why-title {
     font-family: 'SVN-Aptima', sans-serif;
     font-weight: 700;
-    font-size: 42px; /* Nhỏ hơn title chính một chút cho cân đối */
-    color: #685951; /* Màu chữ theo yêu cầu */
+    font-size: 42px; 
+    color: #685951; 
     margin-bottom: 20px;
     line-height: 1.3;
 }
@@ -144,9 +171,8 @@
     font-weight: 400;
 }
 
-/* Style cho danh sách (List) */
 .why-list {
-    list-style: none; /* Bỏ dấu chấm mặc định */
+    list-style: none; 
     padding-left: 10px;
     margin-bottom: 0;
 }
@@ -188,16 +214,16 @@
 
 .gallery-section {
     padding: 40px 0 80px 0;
-    background-color: #E2DDD5; /* Màu nền theo yêu cầu */
+    background-color: #fff; 
 }
 
 .gallery-title {
-    font-family: 'SVN-Aptima', sans-serif; /* Hoặc font tiêu đề bạn đang dùng */
+    font-family: 'SVN-Aptima', sans-serif; 
     font-weight: 700;
     font-size: 42px;
-    color: #685951; /* Màu chữ theo yêu cầu */
+    color: #685951; 
     margin-bottom: 20px;
-    text-transform: capitalize; /* Viết hoa chữ cái đầu */
+    text-transform: capitalize; 
 }
 
 .gallery-desc {
@@ -209,34 +235,32 @@
     font-weight: 400;
 }
 
-/* Style cho khung ảnh */
 .gallery-item {
-    overflow: hidden; /* Để bo góc ảnh chuẩn hơn */
-    border-radius: 15px; /* Bo tròn góc ảnh giống mẫu */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Đổ bóng nhẹ */
-    transition: transform 0.3s ease; /* Hiệu ứng mượt khi di chuột */
+    overflow: hidden;
+    border-radius: 15px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+    transition: transform 0.3s ease; 
 }
 
-/* Hiệu ứng zoom nhẹ khi di chuột vào ảnh (Optional) */
 .gallery-item:hover {
-    transform: translateY(-5px); /* Ảnh nổi lên một chút khi hover */
+    transform: translateY(-5px); 
 }
 
 .gallery-item img {
     width: 100%;
-    height: 300px; /* Cố định chiều cao để 4 ảnh đều nhau */
-    object-fit: cover; /* Đảm bảo ảnh không bị méo khi fix chiều cao */
+    height: 300px; 
+    object-fit: cover;
     display: block;
 }
 
 .confidence-banner {
-    background-color: #A6A6A6; /* Màu nền xám lấy từ ảnh mẫu */
-    border-radius: 15px; /* Bo góc cho cả khối */
-    overflow: hidden; /* Đảm bảo ảnh không bị tràn ra ngoài góc bo */
+    background-color: #A6A6A6; 
+    border-radius: 15px; 
+    overflow: hidden; 
 }
 
 .confidence-text {
-    color: #fff; /* Màu chữ trắng */
+    color: #fff; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -257,31 +281,79 @@
     line-height: 1.6;
     margin-bottom: 30px;
     font-weight: 400;
-    color: #f0f0f0; /* Màu trắng hơi nhạt cho phần mô tả */
+    color: #f0f0f0; 
 }
 
 .confidence-image {
-    min-height: 300px; /* Chiều cao tối thiểu cho ảnh trên mobile */
-    background-size: cover; /* Ảnh phủ kín khung */
-    background-position: center center; /* Căn giữa ảnh */
+    min-height: 300px; 
+    background-size: cover;
+    background-position: center center; 
 }
 
-/* Tạo class mới cho nút màu hồng */
 .btn-pink {
-    background-color: #D8A6B0 !important; /* Màu hồng phấn */
+    background-color: #D8A6B0 !important; 
     border-color: #D8A6B0 !important;
     color: #fff !important;
 }
 
 .btn-pink:hover {
-    background-color: #fff !important; /* Hover thành nền trắng */
-    color: #D8A6B0 !important; /* Chữ màu hồng */
+    background-color: #fff !important; 
+    color: #D8A6B0 !important; 
+}
+
+.cta-section {
+    position: relative;
+    background-image: url('../images/about-background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 0;
+    color: #fff;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #43312799;
+    z-index: 1;
+}
+
+.cta-title {
+    font-family: 'SVN-Aptima', serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #EFE8E1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-location {
+    display: inline-block;
+    background-color: #EFE8E1;
+    color: #685951;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
-    .service-img-stack .img-back{
-        margin-left: 30px;
+    .service-img-stack .img-frame{
+        left: -10px !important;
     }
+    /* .service-img-stack .img-back{
+        margin-left: 30px;
+    } */
     .service-img-stack {
         padding-right: 20px;
         padding-bottom: 20px;
@@ -289,6 +361,7 @@
     }
     
     .service-title {
+        margin-top: 0 !important;
         font-size: 32px;
         text-align: center;
     }
@@ -334,4 +407,24 @@
     
     .order-1 { order: 1 !important; }
     .order-2 { order: 2 !important; }
+
+    .cta-section {
+        padding: 18px !important;
+        background-attachment: scroll !important;
+        background-size: 1456 auto !important; 
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+    }
+
+    .cta-title {
+        font-size: 18px !important; 
+        line-height: 1.4 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .btn-location {
+        font-size: 12px !important;   
+        padding: 6px 20px !important;
+        letter-spacing: 0.5px !important;
+    }
 }
