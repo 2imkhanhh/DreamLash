@@ -1,5 +1,5 @@
 .service-detail-section {
-    padding: 80px 0;
+    padding: 100px 0;
     background-color: #E2DDD5; 
     background-image:
         linear-gradient(rgba(226, 221, 213, 0.5), rgba(226, 221, 213, 0.5)),
@@ -52,10 +52,14 @@
     color: #777676; 
     font-size: 18px;
     line-height: 1.8;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     font-weight: 300;
     padding-right: 5px;
-    min-height: 120px;
+    /* min-height: 120px; */
+}
+
+.service-desc:last-child {
+    margin-bottom: 30px !important;
 }
 
 /* .service-desc::after {
@@ -347,6 +351,50 @@
     transition: all 0.3s ease;
 }
 
+/* Đảm bảo các item không bị co lại quá mức */
+.gallery-item {
+    flex: 0 0 auto; 
+    /* Không set width cứng ở đây, để class col-lg-4 tự xử lý */
+}
+
+/* Style khung ảnh: Bo góc, chiều cao cố định */
+.gallery-item .special-img-wrapper {
+    height: 350px; /* Chỉnh độ cao ảnh tại đây */
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item .special-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ảnh phủ đầy khung, không bị méo */
+    display: block;
+}
+
+/* Style nút bấm */
+.slider-arrow {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    background: #fff;
+    border: 1px solid #685951;
+    color: #685951;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 10;
+    margin: 0 10px; /* Tạo khoảng cách nút ra khỏi ảnh */
+}
+
+.slider-arrow:hover {
+    background: #685951;
+    color: #fff;
+}
 @media (max-width: 768px) {
     .service-img-stack .img-frame{
         left: -10px !important;
