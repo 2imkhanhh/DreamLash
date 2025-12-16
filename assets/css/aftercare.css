@@ -67,7 +67,7 @@ html, body {
 }
 
 .custom-accordion .accordion-button:not(.collapsed) {
-    background-color: #d0b76d; 
+    background-color: #685951; 
     color: #ffffff;
 }
 
@@ -124,7 +124,7 @@ html, body {
     }
     
     .custom-accordion .accordion-button:active {
-        background-color: #d0b76d !important;
+        background-color: #685951 !important;
         color: #ffffff !important;
     }
 
