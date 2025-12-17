@@ -31,12 +31,12 @@
 .service-img-left-wrapper {
     overflow: hidden;
     margin: 0;
-    margin-right: 10px;
+    margin-right: 0;
     display: inline-block;
-    width: 100%;
-    max-width: 500px;
+    width: 120%;
+    max-width: 800px;
     position: relative;
-    left: 60px;
+    left: 270px;
     z-index: 2;
     vertical-align: bottom;
     margin-bottom: -1px;
@@ -71,8 +71,8 @@
 
 .service-decor-left {
     position: absolute;
-    bottom: -100px;
-    left: -180px;
+    bottom: -90px;
+    left: -110px;
     width: 60%;
     height: auto;
     z-index: 0;
@@ -121,8 +121,8 @@
 }
 
 .star-1 {
-    left: 9px;
-    bottom: 148px;
+    left: 80px;
+    bottom: 159px;
     width: 35px;
 }
 
@@ -355,9 +355,9 @@
     .service-img-left-wrapper,
     .service-img-right-wrapper {
         left: 0 !important;
-        margin: 0 auto !important;
-        width: 100% !important;
-        max-width: 100% !important;
+        margin: 0 0 0 60px !important;
+        width: 150% !important;
+        max-width: 150% !important;
         text-align: center;
         display: block;
     }
