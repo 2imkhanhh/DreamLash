@@ -819,6 +819,23 @@ img {
     transform: translateY(-2px);
 }
 
+.review-title {
+    font-family: 'SVN-Aptima', serif;
+    font-weight: 600;
+    font-size: 50px;
+    color: #685951;
+    margin-bottom: 20px;
+}
+
+.review-subtitle {
+    font-family: 'Urbanist', sans-serif;
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 @media (max-width: 991px) {
     .custom-header {
         padding: 0;
