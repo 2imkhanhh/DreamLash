@@ -281,6 +281,10 @@
 }
 
 .quote-cta-section {
+    background-color: #E2DDD5;
+    background-image:
+        linear-gradient(rgba(226, 221, 213, 0.5), rgba(226, 221, 213, 0.5)),
+        url('../images/background1.png');
     padding: 40px 0;
     background-color: #fff;
 }
@@ -298,7 +302,7 @@
 .btn-book-cta {
     display: inline-block;
     background-color: #685951;
-    color: #fff;
+    color: #E2DDD5;
     font-family: 'Urbanist', sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -312,10 +316,161 @@
 }
 
 .btn-book-cta:hover {
-    background-color: #fff;
-    color: #685951;
+    color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(104, 89, 81, 0.2);
+}
+
+.service-meta-box {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.meta-header, .meta-item {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Urbanist', sans-serif;
+    padding: 4px 0;
+}
+
+.meta-header {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #685951; /* Màu nâu giống tiêu đề */
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 5px;
+}
+
+.meta-item {
+    font-size: 13px;
+    color: #666;
+}
+
+.meta-item span:first-child {
+    font-weight: 600;
+    width: 40%; 
+}
+
+.meta-item span:nth-child(2) {
+    width: 35%; 
+    margin-left: 10px;
+}
+
+.meta-item span:last-child {
+    width: 25%; /* Cột Cost */
+    text-align: right;
+}
+
+/* Giữ nguyên các class cũ của bạn */
+.service-item-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    /* Thêm padding nhẹ để nội dung đỡ sát lề khi ở màn hình nhỏ */
+    padding-bottom: 15px; 
+}
+
+.service-img-box {
+    margin-bottom: 20px;
+    overflow: hidden; /* Quan trọng: để ảnh không tràn ra ngoài khi to lên */
+    border-radius: 2px;
+}
+
+.service-img-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Hiệu ứng mượt mà */
+}
+
+/* Khi hover vào Card hoặc trực tiếp vào ảnh */
+.service-item-card:hover .service-img-box img {
+    transform: scale(1.1); /* Phóng to 10% */
+}
+
+/* --- HIỆU ỨNG GẠCH CHÂN CHẠY TỪ TRÁI SANG PHẢI --- */
+.service-item-title a {
+    text-decoration: none;
+    color: #685951; /* Màu nâu cũ của bạn */
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+.service-item-title a.underline-hover::after {
+    content: '';
+    position: absolute;
+    width: 0; 
+    height: 0.5px; 
+    bottom: 0;
+    left: 0;
+    background-color: #9a8a81; 
+    transition: width 0.8s ease-in-out; 
+}
+
+/* Khi hover vào Card hoặc tiêu đề thì đường gạch chạy ra */
+.service-item-card:hover .underline-hover::after {
+    width: 100%; /* Chiều dài đạt 100% khi hover */
+}
+
+.service-item-title {
+    font-family: 'SVN-Aptima', serif;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.service-details-box {
+    margin-bottom: 15px;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 14px;
+}
+
+.details-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #666;
+}
+
+.details-row.header {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #685951; /* Dùng màu nâu của tiêu đề */
+    border-bottom: 2px solid #ececec; /* Đường kẻ đậm hơn cho tiêu đề */
+}
+
+/* Canh chỉnh các cột trong bảng giá */
+/* .col-type { flex: 2; } 
+.col-duration { flex: 1; text-align: left; }
+.col-cost { flex: 1; text-align: right; } */
+
+.fw-bold { font-weight: 600; }
+/* -------------------------------------------------- */
+
+.service-desc {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #777;
+    text-align: justify;
+    margin-top: auto; /* Đẩy mô tả xuống dưới cùng nếu cần */
+}
+
+/* Tiêu đề trang chung */
+.page-title {
+    font-size: 42px;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    font-style: italic;
+    color: #888;
 }
 
 @media (min-width: 992px) {
