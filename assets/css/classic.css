@@ -30,7 +30,7 @@
 
 .service-img-stack .img-back {
     position: relative; 
-    width: 85%; 
+    width: 100%; 
     margin: 0;
     object-fit: cover;
     display: block;
