@@ -458,11 +458,10 @@
     font-size: 14px;
     line-height: 1.5;
     color: #777;
-    text-align: justify;
-    margin-top: auto; /* Đẩy mô tả xuống dưới cùng nếu cần */
+    text-align: left;
+    margin-top: auto; 
 }
 
-/* Tiêu đề trang chung */
 .page-title {
     font-size: 42px;
     letter-spacing: 2px;
