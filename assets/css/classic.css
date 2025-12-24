@@ -7,11 +7,10 @@
 }
 
 .service-img-stack {
-    margin-top: -10px !important;
-    padding-right: 80px;
+    margin-top: 10px !important;
+    padding-right: 0;
     position: relative;
-    max-width: 600px; 
-    margin: 0 auto;
+    max-width: 500px; 
     display: flex;
     justify-content: flex-end; 
     align-items: center;
@@ -388,7 +387,7 @@
     cursor: pointer;
     transition: all 0.2s;
     z-index: 10;
-    margin: 0 10px; /* Tạo khoảng cách nút ra khỏi ảnh */
+    margin: 0 10px; 
 }
 
 .slider-arrow:hover {
@@ -397,13 +396,14 @@
 }
 @media (max-width: 768px) {
     .service-img-stack .img-frame{
-        left: -10px !important;
+        left: 10px !important;
     }
     /* .service-img-stack .img-back{
         margin-left: 30px;
     } */
     .service-img-stack {
-        padding-right: 20px;
+        max-width: 350px; 
+        padding-left: 40px;
         padding-bottom: 20px;
         margin-bottom: 40px;
     }

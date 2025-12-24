@@ -361,49 +361,38 @@
 
 .meta-item span:last-child {
     width: 25%;
-    /* Cột Cost */
     text-align: right;
 }
 
-/* Giữ nguyên các class cũ của bạn */
 .service-item-card {
     height: 100%;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
-    /* Thêm padding nhẹ để nội dung đỡ sát lề khi ở màn hình nhỏ */
-    padding-bottom: 15px;
+    padding-bottom: 15px; 
 }
 
 .service-img-box {
     margin-bottom: 20px;
-    overflow: hidden;
+    overflow: hidden; 
     border-radius: 2px;
-    height: 380px;
-    border-radius: 15px;
+    width: 100%;
 }
 
 .service-img-box img {
     width: 100%;
-    height: 100%;
-    /* Ảnh lấp đầy toàn bộ box */
+    height: auto;
     object-fit: cover;
-    /* Giữ tỷ lệ, cắt phần thừa để vừa khít */
-    object-position: center;
-    /* Tập trung vào giữa (phần mắt) */
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
 }
 
-/* Giữ nguyên hiệu ứng hover zoom */
 .service-item-card:hover .service-img-box img {
-    transform: scale(1.1);
+    transform: scale(1.1); 
 }
 
-/* --- HIỆU ỨNG GẠCH CHÂN CHẠY TỪ TRÁI SANG PHẢI --- */
 .service-item-title a {
     text-decoration: none;
     color: #685951;
-    /* Màu nâu cũ của bạn */
     position: relative;
     display: inline-block;
     padding-bottom: 2px;
@@ -573,14 +562,7 @@
         width: 85% !important;
     }
 
-    .service-img-box {
-        margin-bottom: 20px;
-        overflow: hidden;
-        border-radius: 2px;
-        height: 220px;
-        border-radius: 15px;
-    }
-
+   
     .service-number {
         font-size: 14px !important;
         width: 30px !important;
