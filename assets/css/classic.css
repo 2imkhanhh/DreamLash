@@ -396,16 +396,25 @@
 }
 @media (max-width: 768px) {
     .service-img-stack .img-frame{
-        left: -10 !important;
+        left: -10px !important;
     }
     /* .service-img-stack .img-back{
         margin-left: 30px;
     } */
     .service-img-stack {
         max-width: 300px; 
-        margin-left: 40px;
+        
+        /* --- THAY ĐỔI QUAN TRỌNG --- */
+        margin-left: auto !important;  /* Tự động tính lề trái */
+        margin-right: auto !important; /* Tự động tính lề phải */
+        /* Kết hợp 2 cái trên => Khối sẽ nằm chính giữa */
+        /* --------------------------- */
+
         padding-bottom: 20px;
         margin-bottom: 40px;
+        
+        /* Đảm bảo flex không đè lên logic margin */
+        display: block; /* Hoặc giữ flex nhưng phải cẩn thận justify-content */
     }
     
     .service-title {
