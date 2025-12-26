@@ -10,27 +10,30 @@
     margin-top: 10px !important;
     padding-right: 0;
     position: relative;
-    max-width: 500px; 
+    width: 100%;      
+    max-width: 65%;   
     display: flex;
     justify-content: flex-end; 
     align-items: center;
+    margin-left: 100px;
 }
 
 .service-img-stack .img-frame {
     position: absolute;
-    top: 40px;
+    top: 10px;
     left: -25px;
-    width: 100%; 
-    height: 100%;
+    width: 120%; 
+    height: 120%;
     z-index: 1;
     object-fit: contain; 
     transform: translateX(-20px); 
 }
 
 .service-img-stack .img-back {
+    border-radius: 20px;
     position: relative; 
     width: 100%; 
-    margin: 0;
+    margin: 0 ;
     object-fit: cover;
     display: block;
     z-index: 2; 
@@ -350,15 +353,12 @@
     transition: all 0.3s ease;
 }
 
-/* Đảm bảo các item không bị co lại quá mức */
 .gallery-item {
     flex: 0 0 auto; 
-    /* Không set width cứng ở đây, để class col-lg-4 tự xử lý */
 }
 
-/* Style khung ảnh: Bo góc, chiều cao cố định */
 .gallery-item .special-img-wrapper {
-    height: 350px; /* Chỉnh độ cao ảnh tại đây */
+    height: 350px;
     width: 100%;
     border-radius: 20px;
     overflow: hidden;
@@ -368,7 +368,7 @@
 .gallery-item .special-img-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ảnh phủ đầy khung, không bị méo */
+    object-fit: cover; 
     display: block;
 }
 

@@ -339,7 +339,6 @@
     font-size: 11px;
     text-transform: uppercase;
     color: #685951;
-    /* Màu nâu giống tiêu đề */
     border-bottom: 1px solid #f0f0f0;
     margin-bottom: 5px;
 }
@@ -409,10 +408,8 @@
     transition: width 0.8s ease-in-out;
 }
 
-/* Khi hover vào Card hoặc tiêu đề thì đường gạch chạy ra */
 .service-item-card:hover .underline-hover::after {
     width: 100%;
-    /* Chiều dài đạt 100% khi hover */
 }
 
 .service-item-title {
@@ -442,21 +439,13 @@
     font-size: 12px;
     letter-spacing: 0.5px;
     color: #685951;
-    /* Dùng màu nâu của tiêu đề */
     border-bottom: 2px solid #ececec;
-    /* Đường kẻ đậm hơn cho tiêu đề */
 }
-
-/* Canh chỉnh các cột trong bảng giá */
-/* .col-type { flex: 2; } 
-.col-duration { flex: 1; text-align: left; }
-.col-cost { flex: 1; text-align: right; } */
 
 .fw-bold {
     font-weight: 600;
 }
 
-/* -------------------------------------------------- */
 
 .service-desc {
     font-family: 'Urbanist', sans-serif;
