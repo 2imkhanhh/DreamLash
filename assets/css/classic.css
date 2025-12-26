@@ -396,14 +396,14 @@
 }
 @media (max-width: 768px) {
     .service-img-stack .img-frame{
-        left: 10px !important;
+        left: -10 !important;
     }
     /* .service-img-stack .img-back{
         margin-left: 30px;
     } */
     .service-img-stack {
-        max-width: 350px; 
-        padding-left: 40px;
+        max-width: 300px; 
+        margin-left: 40px;
         padding-bottom: 20px;
         margin-bottom: 40px;
     }
