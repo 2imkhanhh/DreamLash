@@ -269,8 +269,12 @@
         line-height: 1.2 !important;
         text-align: center !important;
         width: 100% !important;
-        margin: 30px 0 !important;
+        margin: 20px 0 !important;
         padding: 0 !important;
+    }
+
+    section.dreamy-intro.mb-5 {
+        margin-bottom: 0 !important;
     }
 
     .intro-text {
@@ -363,6 +367,10 @@
     .col-6 {
         padding-left: 5px;
         padding-right: 5px;
+    }
+
+    .process-row {
+        padding-top: 0 !important; 
     }
 }
 
