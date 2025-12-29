@@ -48,7 +48,7 @@
     line-height: 1.6;
     text-align: justify;
     margin-bottom: 20px !important;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .giant-brand-name {
@@ -123,14 +123,15 @@
 
 .decor-vector-bg {
     position: absolute;
-    top: 80%;
-    transform: translateY(-40%);
-    left: -50px;
-    width: 150%;
+    right: 0;
+    left: auto; 
+    bottom: 0; 
+    top: auto; 
+    width: 100%; 
     height: auto;
-    z-index: 0;
-    opacity: 0.8;
+    z-index: -1; 
     pointer-events: none;
+    transform: none;
 }
 
 .decorations-about {
@@ -157,7 +158,7 @@
 }
 
 .about-founder-section {
-    padding: 100px 0; 
+    padding: 60px 0; 
     background-color: #EFE8E1; 
     background-image: url('../images/background1.png'); 
     background-size: cover;
@@ -280,6 +281,7 @@
     .intro-text {
         text-align: center !important;
         padding-right: 0 !important;
+        margin-top: 20px !important;
         margin-bottom: 20px !important;
     }
 
@@ -300,7 +302,7 @@
         transform: none !important;
         width: 100% !important;
         max-width: 300px;
-        margin: -20px auto 30px auto !important;
+        margin: -20px auto 10px auto !important;
         text-align: center !important;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
