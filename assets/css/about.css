@@ -53,20 +53,27 @@
 
 .giant-brand-name {
     font-family: 'SVN-Aptima', sans-serif;
-    font-size: clamp(60px, 9vw, 120px);
+    font-size: clamp(50px, 10vw, 120px);
     line-height: 0.9;
     color: #BDB6B0;
     text-transform: uppercase;
     position: absolute;
-    left: 0;
-    top: 240px;
-    /* bottom: 490px; */
-    z-index: 1;
-    width: fit-content;
-    text-align: right;
-    display: block;
-    padding-left: 0;
-    margin-left: -12px;
+    left: -10px;
+    top: 35%;
+    transform: translateY(-50%);
+    z-index: -1;
+    /* pointer-events: none; */
+    width: auto;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.giant-brand-name .line-top {
+    margin-left: -5px;
+}
+
+.giant-brand-name .line-bottom {
+    align-self: flex-end;
 }
 
 .process-row {
@@ -82,10 +89,10 @@
 }
 
 .intro-img-wrapper img {
+    margin-top: 25px;
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 30px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -124,12 +131,12 @@
 .decor-vector-bg {
     position: absolute;
     right: 0;
-    left: auto; 
-    bottom: 0; 
-    top: auto; 
-    width: 100%; 
+    left: auto;
+    bottom: 0;
+    top: auto;
+    width: 100%;
     height: auto;
-    z-index: -1; 
+    z-index: -1;
     pointer-events: none;
     transform: none;
 }
@@ -158,9 +165,9 @@
 }
 
 .about-founder-section {
-    padding: 60px 0; 
-    background-color: #EFE8E1; 
-    background-image: url('../images/background1.png'); 
+    padding: 60px 0;
+    background-color: #EFE8E1;
+    background-image: url('../images/background1.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -174,17 +181,17 @@
     font-size: 48px;
     margin-bottom: 30px;
     text-transform: uppercase;
-    letter-spacing: 2px; 
+    letter-spacing: 2px;
 }
 
 .section-desc {
     font-family: 'Urbanist', sans-serif;
-    font-weight: 300; 
+    font-weight: 300;
     color: #685951;
     font-size: 20px;
     line-height: 1.8;
     margin-bottom: 0;
-    max-width: 800px; 
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -201,9 +208,9 @@
 
 .founder-curve {
     position: absolute;
-    bottom: -10px; 
-    left: 50px;   
-    width: 800px; 
+    bottom: -10px;
+    left: 50px;
+    width: 800px;
     height: auto;
     opacity: 0.8;
 }
@@ -265,13 +272,30 @@
     }
 
     .giant-brand-name {
-        position: static !important;
-        font-size: 38px !important;
-        line-height: 1.2 !important;
-        text-align: center !important;
-        width: 100% !important;
-        margin: 20px 0 !important;
-        padding: 0 !important;
+        position: relative !important;
+        top: auto !important;
+        width: fit-content !important; 
+        margin: 5px auto 10px auto !important; 
+        left: 0 !important; 
+        right: 0 !important;
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .giant-brand-name span {
+        font-size: clamp(30px, 13vw, 70px) !important; 
+        line-height: 0.9 !important;
+        white-space: nowrap !important; 
+    }
+
+    .giant-brand-name .line-top {
+        margin-left: -5px !important;
+    }
+
+    .giant-brand-name .line-bottom {
+        align-self: flex-end !important;
+        margin-right: 0 !important; 
     }
 
     section.dreamy-intro.mb-5 {
@@ -309,7 +333,7 @@
 
     .about-founder-section {
         padding: 50px 0 !important;
-        
+
     }
 
     .founder-img-wrapper {
@@ -321,19 +345,19 @@
     .cta-section {
         padding: 18px !important;
         background-attachment: scroll !important;
-        background-size: 1456 auto !important; 
+        background-size: 1456 auto !important;
         background-position: center center !important;
         background-repeat: no-repeat !important;
     }
 
     .cta-title {
-        font-size: 18px !important; 
+        font-size: 18px !important;
         line-height: 1.4 !important;
         margin-bottom: 15px !important;
     }
 
     .btn-location {
-        font-size: 12px !important;   
+        font-size: 12px !important;
         padding: 6px 20px !important;
         letter-spacing: 0.5px !important;
     }
@@ -372,7 +396,7 @@
     }
 
     .process-row {
-        padding-top: 0 !important; 
+        padding-top: 0 !important;
     }
 }
 
@@ -383,5 +407,11 @@
 
     .quote-card {
         font-size: 16px !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    .giant-brand-name {
+        font-size: clamp(130px, 12vw, 250px);
     }
 }
