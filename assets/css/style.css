@@ -1391,7 +1391,6 @@ img {
         color: #685951 !important;
     }
 
-    /* 2. CHỈ in đậm khi thực sự đang ở trang đó (có class .active) */
     .service-link-wrap .service-link.active {
         font-weight: 700 !important;
     }

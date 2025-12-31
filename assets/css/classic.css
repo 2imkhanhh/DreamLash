@@ -76,11 +76,6 @@
     animation: blink-cursor 0.75s step-end infinite;
 } */
 
-/* @keyframes blink-cursor {
-    from, to { opacity: 0; }
-    50% { opacity: 1; }
-} */
-
 .service-desc.typing-done::after {
     display: none;
 }
@@ -372,7 +367,6 @@
     display: block;
 }
 
-/* Style nút bấm */
 .slider-arrow {
     width: 45px;
     height: 45px;
@@ -403,18 +397,11 @@
     } */
     .service-img-stack {
         max-width: 300px; 
-        
-        /* --- THAY ĐỔI QUAN TRỌNG --- */
-        margin-left: auto !important;  /* Tự động tính lề trái */
-        margin-right: auto !important; /* Tự động tính lề phải */
-        /* Kết hợp 2 cái trên => Khối sẽ nằm chính giữa */
-        /* --------------------------- */
-
+        margin-left: auto !important;  
+        margin-right: auto !important; 
         padding-bottom: 20px;
         margin-bottom: 40px;
-        
-        /* Đảm bảo flex không đè lên logic margin */
-        display: block; /* Hoặc giữ flex nhưng phải cẩn thận justify-content */
+        display: block; 
     }
     
     .service-title {
