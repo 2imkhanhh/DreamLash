@@ -419,14 +419,14 @@
 
 @media (max-width: 1400px) {
     .giant-brand-name {
-        font-size: clamp(50px, 6vw, 90px);
+        font-size: clamp(50px, 3vw, 90px);
         left: 0px;          
     }
 }
 
 @media (max-width: 1200px) {
     .giant-brand-name {
-        font-size: clamp(50px, 6vw, 70px);
+        font-size: clamp(50px, 3vw, 70px);
         left: 0px;
     }
 }
