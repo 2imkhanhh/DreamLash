@@ -53,13 +53,13 @@
 
 .giant-brand-name {
     font-family: 'SVN-Aptima', sans-serif;
-    font-size: clamp(50px, 10vw, 120px);   /* giữ co giãn theo viewport width */
+    font-size: clamp(50px, 10vw, 120px);   
     line-height: 0.9;
     color: #BDB6B0;
     text-transform: uppercase;
     position: absolute;
     left: -10px;
-    top: 35%;                              /* điều chỉnh nhẹ để tránh vùng đầu trang */
+    top: 35%;                              
     transform: translateY(-50%);
     z-index: -1;
     /* pointer-events: none; */
