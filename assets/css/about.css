@@ -413,7 +413,7 @@
 
 @media (min-width: 1600px) {
     .giant-brand-name {
-        font-size: clamp(30px, 12vw, 50px);
+        font-size: clamp(130px, 12vw, 250px);
     }
 }
 
@@ -426,7 +426,7 @@
 
 @media (max-width: 1200px) {
     .giant-brand-name {
-        font-size: clamp(30px, 3vw, 50px);
+        font-size: clamp(50px, 3vw, 50px);
         left: 0px;
     }
 }
