@@ -426,7 +426,7 @@
 
 @media (max-width: 1200px) {
     .giant-brand-name {
-        font-size: clamp(80px, 8vw, 70px);
+        font-size: clamp(50px, 8vw, 70px);
         left: 0px;
     }
 }
