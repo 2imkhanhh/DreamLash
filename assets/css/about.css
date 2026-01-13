@@ -53,17 +53,18 @@
 
 .giant-brand-name {
     font-family: 'SVN-Aptima', sans-serif;
-    font-size: clamp(50px, 10vw, 120px);
+    font-size: clamp(50px, 10vw, 120px);   /* giữ co giãn theo viewport width */
     line-height: 0.9;
     color: #BDB6B0;
     text-transform: uppercase;
     position: absolute;
     left: -10px;
-    top: 35%;
+    top: 35%;                              /* điều chỉnh nhẹ để tránh vùng đầu trang */
     transform: translateY(-50%);
     z-index: -1;
     /* pointer-events: none; */
-    width: auto;
+    user-select: none;
+    white-space: nowrap;
     display: inline-flex;
     flex-direction: column;
 }
@@ -413,5 +414,19 @@
 @media (min-width: 1600px) {
     .giant-brand-name {
         font-size: clamp(130px, 12vw, 250px);
+    }
+}
+
+@media (max-width: 1400px) {
+    .giant-brand-name {
+        font-size: clamp(50px, 8vw, 90px);
+        left: 0px;          
+    }
+}
+
+@media (max-width: 1200px) {
+    .giant-brand-name {
+        font-size: clamp(80px, 8vw, 70px);
+        left: 0px;
     }
 }
