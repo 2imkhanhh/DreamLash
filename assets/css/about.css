@@ -53,7 +53,7 @@
 
 .giant-brand-name {
     font-family: 'SVN-Aptima', sans-serif;
-    font-size: clamp(50px, 10vw, 120px);   
+    font-size: clamp(3.2rem, 6vw + 1.2rem, 7.5rem);   
     line-height: 0.9;
     color: #BDB6B0;
     text-transform: uppercase;
@@ -411,7 +411,7 @@
     }
 }
 
-@media (min-width: 1600px) {
+/* @media (min-width: 1600px) {
     .giant-brand-name {
         font-size: clamp(90px, 12vw, 125px);
     }
@@ -436,4 +436,4 @@
         font-size: clamp(50px, 8vw, 80px);
         left: 0px;
     }
-}
+} */

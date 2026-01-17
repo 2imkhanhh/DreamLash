@@ -434,7 +434,7 @@
     }
     
     .gallery-item img {
-        height: 200px; 
+        height: auto !important; 
     }
     
     .gallery-section {
